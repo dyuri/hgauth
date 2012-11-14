@@ -35,7 +35,7 @@ class HgAuthMiddleware(object):
 
     def get_realm(self, environ):
          path = environ['PATH_INFO'].split('/')
-         return path[1] if len(path) > 1 and path[1] != '' else 'Hg Root'
+         return path[1] if len(path) > 2 and path[1] != '' else 'Hg Root'
 
     def authenticate(self, environ):
         """
